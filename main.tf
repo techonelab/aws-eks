@@ -5,12 +5,14 @@ terraform {
       version = "~> 3.0"
     }
   }
-  backend "s3" {
-    bucket = "demoremotetfstate"
-    dynamodb_table = "demoremotetfstate"
-    key = "demoremotetfstate.tfstate"
-    region = var.region
-    encrypt = true
-  }
+  #had to disable saving remote tf state file demo for localstack, as it seems the force path style has been removed from higher version of terraform
+  #nonetheless this should work when using aws instead of localstack
+  #backend "s3" {
+  #  bucket         = "demoremotetfstate"
+  #  key            = "demoremotetfstate.tfstate"
+  #  dynamodb_table = "demoremotetfstate"
+  #  region         = "us-east-1"
+  #  encrypt        = true
+  #}
 
 }
