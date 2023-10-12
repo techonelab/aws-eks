@@ -176,7 +176,7 @@ resource "aws_security_group_rule" "master-node-sg-rule-inbound" {
   cidr_blocks       = flatten([cidrsubnet(var.vpc_cidr_main, var.subnet_cidr_bits, 0), cidrsubnet(var.vpc_cidr_main, var.subnet_cidr_bits, 1), cidrsubnet(var.vpc_cidr_main, var.subnet_cidr_bits, 2), cidrsubnet(var.vpc_cidr_main, var.subnet_cidr_bits, 3)])
 }
 #policy for master-node-sg to allow outbound traffic to anywhere with all port
-resource "aws_security_group_rule" "master-node-sg-rule-outbout" {
+resource "aws_security_group_rule" "master-node-sg-rule-outbound" {
   security_group_id = aws_security_group.master-node-sg.id
   type              = "egress"
   from_port         = 0
