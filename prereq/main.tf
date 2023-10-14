@@ -21,11 +21,3 @@ resource "aws_dynamodb_table" "tf_lock" {
     type = "S"
   }
 }
-
-output "public-sub-id" {
-  
-}
-
-output "private-sub-id" {
-  
-}

@@ -16,3 +16,11 @@ terraform {
   #}
 
 }
+
+module "core" {
+  source = "./module"
+  az_count = var.az_count
+  subnet_cidr_bits = var.subnet_cidr_bits
+  vpc_cidr_main = var.vpc_cidr_main
+  project = var.project
+}
